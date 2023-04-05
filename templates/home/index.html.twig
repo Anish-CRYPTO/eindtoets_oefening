@@ -3,13 +3,17 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <div class="row-4">
-            <div class="col">
-                {% for genre in genres %}
-                    {{ genre.name }}
-                {% endfor %}
-            </div>
+    <div class="container-fluid">
+        <h1 class="text-center mb-5">Genres</h1>
+        <div class="row">
+            {% for genre in Genres %}
+                <div class="col-4 text-center">
+                    <a href=""> {{ genre.name }} </a>
+                </div>
+            {% endfor %}
         </div>
+        <button type="button" class="alert alert-info"><a href="{{ path('add') }}">new Genre</a></button>
     </div>
+
+
 {% endblock %}
